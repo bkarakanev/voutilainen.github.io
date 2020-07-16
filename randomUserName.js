@@ -49,7 +49,14 @@ function getNameWithRandomWords() {
       }
     }
   }
-  console.log(wordsUserName);
+  let letters = wordsUserName.split('');
+  let lettersFiltered = letters.filter(function (el) {
+    return el;
+  });
+  console.log(lettersFiltered);
+  console.log(letters);
+  wordsUserName = lettersFiltered.join('');
+
   return wordsUserName;
 }
 
