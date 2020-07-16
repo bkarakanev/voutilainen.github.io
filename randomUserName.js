@@ -49,7 +49,7 @@ function getNameWithRandomWords() {
       }
     }
   }
-  // console.log(wordsUserName);
+  console.log(wordsUserName);
   return wordsUserName;
 }
 
