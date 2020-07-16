@@ -27,3 +27,38 @@ function getName() {
 }
 
 clickFunction = () => (document.getElementById('output').innerHTML = getName());
+
+function getNameWithRandomWords() {
+  let wordsArray = text1.split('\n');
+  let wordsUserName = '';
+  let counter = 0;
+
+  while (wordsUserName.length < 17) {
+    let randomWordIndex = Math.floor(Math.random() * wordsArray.length);
+    let currentWord = wordsArray[randomWordIndex];
+    if (currentWord.length + wordsUserName.length <= 16) {
+      wordsUserName += currentWord;
+      counter++;
+    } else if (wordsUserName.length < 4) {
+      continue;
+    } else {
+      if (counter < 2) {
+        continue;
+      } else {
+        break;
+      }
+    }
+  }
+  // console.log(wordsUserName);
+  return wordsUserName;
+}
+
+let text1;
+fetch('words.txt')
+  .then(response => response.text())
+  .then(text => (text1 = text));
+
+//
+
+wordsClickFunction = () =>
+  (document.getElementById('output').innerHTML = getNameWithRandomWords());
