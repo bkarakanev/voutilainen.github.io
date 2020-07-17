@@ -77,8 +77,8 @@ function generatorStats(displayedWord) {
       wordsUsed.splice(i, 1);
     }
   }
-  console.log(displayedWord);
-  console.log(wordsUsedMoreThanOnce);
+  // console.log(displayedWord);
+  // console.log(wordsUsedMoreThanOnce);
 }
 
 let text1;
@@ -94,7 +94,7 @@ wordsClickFunction = () => {
     document.getElementById(
       'repeated-words'
     ).innerHTML = `Words repeated more than once: ${wordsUsedMoreThanOnce.join(
-      ''
+      ' '
     )}`;
   } else {
     document.getElementById('repeated-words').innerHTML =
