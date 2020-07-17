@@ -62,6 +62,9 @@ function getNameWithRandomWords() {
 
 let wordsUsed = {};
 let wordsUsedMoreThanOnce = [];
+if (wordsUsedMoreThanOnce.length == 1) {
+  alert('Damn nigga');
+}
 
 function generatorStats(displayedWord) {
   if (wordsUsed.hasOwnProperty(displayedWord)) {
@@ -97,7 +100,7 @@ wordsClickFunction = () => {
     document.getElementById(
       'repeated-words'
     ).innerHTML = `Words repeated more than once: ${wordsUsedMoreThanOnce.join(
-      ' '
+      '\n'
     )}`;
   } else {
     document.getElementById('repeated-words').innerHTML =
