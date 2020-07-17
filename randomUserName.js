@@ -38,6 +38,7 @@ function getNameWithRandomWords() {
     let currentWord = wordsArray[randomWordIndex];
     if (currentWord.length + wordsUserName.length <= 16) {
       wordsUserName += currentWord;
+      generatorStats(currentWord);
       counter++;
     } else if (wordsUserName.length < 4) {
       continue;
@@ -53,11 +54,26 @@ function getNameWithRandomWords() {
   let lettersFiltered = letters.filter(function (el) {
     return el;
   });
-  console.log(lettersFiltered);
-  console.log(letters);
+  // console.log(lettersFiltered);
+  // console.log(letters);
   wordsUserName = lettersFiltered.join('');
-
   return wordsUserName;
+}
+
+let wordsUsed = {};
+let wordsUsedMoreThanOnce = [];
+
+function generatorStats(displayedWord) {
+  if (wordsUsed.hasOwnProperty(displayedWord)) {
+    wordsUsed[displayedWord]++;
+  } else {
+    wordsUsed[displayedWord] = 1;
+  }
+  if (wordsUsed[displayedWord] > 1) {
+    wordsUsedMoreThanOnce.push(displayedWord);
+  }
+  console.log(displayedWord);
+  console.log(wordsUsedMoreThanOnce);
 }
 
 let text1;
@@ -67,5 +83,16 @@ fetch('words.txt')
 
 //
 
-wordsClickFunction = () =>
-  (document.getElementById('output').innerHTML = getNameWithRandomWords());
+wordsClickFunction = () => {
+  document.getElementById('output').innerHTML = getNameWithRandomWords();
+  if (wordsUsedMoreThanOnce.length > 0) {
+    document.getElementById(
+      'repeated-words'
+    ).innerHTML = `Words repeated more than once: ${wordsUsedMoreThanOnce.join(
+      ''
+    )}`;
+  } else {
+    document.getElementById('repeated-words').innerHTML =
+      'Words repeated more than once: None';
+  }
+};
