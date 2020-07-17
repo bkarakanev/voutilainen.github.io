@@ -4,20 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random LoL Name Generator</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="guf4fo1aoaegragfs5ru.webp"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
   </head>
   <body>
-    <button type="button" id="btn" onclick="clickFunction()">
-      Click!
-    </button>
-    <button type="button" id="btn2" onclick="wordsClickFunction()">
-      generate name with random words
-    </button>
-    <h1
-      id="output"
-      style="
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      "
-    ></h1>
+    <div class="container">
+      <div id="title-h1">
+        <h1 id="title">Random LoL Name Generator</h1>
+      </div>
+      <div>
+        <button
+          type="button"
+          id="btn"
+          class="buttons"
+          onclick="clickFunction()"
+        >
+          Generate Name With Random Letters
+        </button>
+        <button
+          type="button"
+          id="btn2"
+          class="buttons"
+          onclick="wordsClickFunction()"
+        >
+          Generate Name with Random Words
+        </button>
+      </div>
+
+      <h2
+        id="output"
+        style="
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+        "
+      ></h2>
+    </div>
     <script type="text/javascript" src="randomUserName.js"></script>
     <script src="lib/jquery-3.5.1.js"></script>
   </body>
