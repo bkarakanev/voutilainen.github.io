@@ -72,6 +72,11 @@ function generatorStats(displayedWord) {
   if (wordsUsed[displayedWord] > 1) {
     wordsUsedMoreThanOnce.push(displayedWord);
   }
+  for (let i = 0; i < wordsUsed.length; i++) {
+    if (wordsUsed[i] == '' || wordsUsed[i] == ' ') {
+      wordsUsed.splice(i, 1);
+    }
+  }
   console.log(displayedWord);
   console.log(wordsUsedMoreThanOnce);
 }
