@@ -69,7 +69,10 @@ function generatorStats(displayedWord) {
   } else {
     wordsUsed[displayedWord] = 1;
   }
-  if (wordsUsed[displayedWord] > 1) {
+  if (
+    wordsUsed[displayedWord] > 1 &&
+    !wordsUsedMoreThanOnce.includes(displayedWord)
+  ) {
     wordsUsedMoreThanOnce.push(displayedWord);
   }
   for (let i = 0; i < wordsUsed.length; i++) {
