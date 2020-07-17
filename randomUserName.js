@@ -93,8 +93,12 @@ fetch('words.txt')
   .then(text => (text1 = text));
 
 //
-
+let clicks = 0;
 wordsClickFunction = () => {
+  clicks += 1;
+  // console.log(clicks);
+  document.getElementById('clicks').innerHTML = `Total clicks: ${clicks}`;
+
   document.getElementById('output').innerHTML = getNameWithRandomWords();
   if (wordsUsedMoreThanOnce.length > 0) {
     document.getElementById(
