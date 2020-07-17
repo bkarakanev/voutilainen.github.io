@@ -97,6 +97,9 @@ let clicks = 0;
 wordsClickFunction = () => {
   clicks += 1;
   // console.log(clicks);
+  if (clicks % 100 == 0 && clicks > 0) {
+    alert('Yo chill');
+  }
   document.getElementById('clicks').innerHTML = `Total clicks: ${clicks}`;
 
   document.getElementById('output').innerHTML = getNameWithRandomWords();
